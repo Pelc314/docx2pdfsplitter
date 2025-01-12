@@ -59,7 +59,7 @@ def split_pdf_by_content(input_pdf, split_keywords, output_dir):
 
 # ==================================================================================================
 if _name_ == "_main_":
-    base_dir = ""
+    base_dir = "/home/maciej/projects/docx2pdfsplitter"
     input_path = os.path.join(base_dir, "document.docx")
     output_pdf_path = os.path.join(base_dir, "document.pdf")
     output_dir = base_dir

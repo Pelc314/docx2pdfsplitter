@@ -1,11 +1,11 @@
 from PyPDF2 import PdfReader, PdfWriter
 from docx import Document
-from docx2pdf import convert  # uses ms word to convert docx to pdf
+import pypandoc
 import os
 
 
 def convert_docx_to_pdf(input_path, output_path):
-    convert(input_path, output_path)
+    pypandoc.convert_file(input_path, 'pdf', outputfile=output_path)
 
 
 def count_pdf_pages(pdf_path):
@@ -58,7 +58,7 @@ def split_pdf_by_content(input_pdf, split_keywords, output_dir):
 
 
 # ==================================================================================================
-if _name_ == "_main_":
+if __name__ == "__main__":
     base_dir = "/home/maciej/projects/docx2pdfsplitter"
     input_path = os.path.join(base_dir, "document.docx")
     output_pdf_path = os.path.join(base_dir, "document.pdf")
